@@ -14,6 +14,7 @@ const debug = require('debug')('ghost:s3');
 
 class StorageS3 extends StorageBase {
   constructor(config) {
+    config = config || {};
     super(config);
 
     this.bucket = config.bucket || process.env.AWS_S3_BUCKET;
