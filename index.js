@@ -20,7 +20,7 @@ class StorageS3 extends StorageBase {
     this.bucket = config.bucket || process.env.AWS_S3_BUCKET;
     this.region = config.region || process.env.AWS_S3_REGION || "ap-southeast-1";
     this.acl = config.acl || process.env.AWS_S3_ACL || "public-read";
-    this.client = new S3Client({});
+    this.client = new S3Client({region: this.region});
   }
 
   async exists(filename) {    
